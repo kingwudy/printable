@@ -1,6 +1,6 @@
 package com.ganchurin.model;
 
-public interface Model {
+public interface DataSource {
 
 	String getValue(int row, int col);
 
