@@ -10,6 +10,9 @@ public class SimplePrintFormat implements PrintFormat {
 	private char rowChar = DefaultRowChar;
 	private char colChar = DefaultColChar;
 
+	public SimplePrintFormat() {
+	}
+
 	public SimplePrintFormat(char cornerChar, char rowChar, char colChar) {
 		this.cornerChar = cornerChar;
 		this.rowChar = rowChar;
@@ -22,7 +25,7 @@ public class SimplePrintFormat implements PrintFormat {
 	}
 
 	@Override
-	public PrintFormat setCornerChar(char c) {
+	public SimplePrintFormat setCornerChar(char c) {
 		return new SimplePrintFormat(c, this.rowChar, this.colChar);
 	}
 
@@ -32,7 +35,7 @@ public class SimplePrintFormat implements PrintFormat {
 	}
 
 	@Override
-	public PrintFormat setRowChar(char c) {
+	public SimplePrintFormat setRowChar(char c) {
 		return new SimplePrintFormat(this.cornerChar, c, this.colChar);
 	}
 
@@ -42,7 +45,7 @@ public class SimplePrintFormat implements PrintFormat {
 	}
 
 	@Override
-	public PrintFormat setColumnChar(char c) {
+	public SimplePrintFormat setColumnChar(char c) {
 		return new SimplePrintFormat(this.cornerChar, this.rowChar, c);
 	}
 }

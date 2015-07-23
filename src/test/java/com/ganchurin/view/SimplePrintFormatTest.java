@@ -1,21 +1,41 @@
 package com.ganchurin.view;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
 public class SimplePrintFormatTest {
 
+	private SimplePrintFormat format;
+
+	@Before
+	public void init() {
+		format = new SimplePrintFormat();
+	}
+
 	@Test
-	public void createSimplePrintFormat() {
-		char cornerChar = '+';
-		char rowChar = '-';
-		char colChar = '|';
+	public void newSimplePrintFormat() {
+		assertTrue(format.getCornerChar() == '+');
+		assertTrue(format.getRowChar() == '-');
+		assertTrue(format.getColumnChar() == '|');
+	}
 
-		SimplePrintFormat format = new SimplePrintFormat(cornerChar, rowChar, colChar);
+	@Test
+	public void setCornerChar() {
+		SimplePrintFormat f = format.setCornerChar('*');
+		assertTrue(f.getCornerChar() == '*');
+	}
 
-		assertTrue(format.getCornerChar() == cornerChar);
-		assertTrue(format.getRowChar() == rowChar);
-		assertTrue(format.getColumnChar() == colChar);
+	@Test
+	public void setRowChar() {
+		SimplePrintFormat f = format.setRowChar('*');
+		assertTrue(f.getRowChar() == '*');
+	}
+
+	@Test
+	public void setColumnChar() {
+		SimplePrintFormat f = format.setColumnChar('*');
+		assertTrue(f.getColumnChar() == '*');
 	}
 }
