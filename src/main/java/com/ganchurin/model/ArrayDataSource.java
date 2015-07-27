@@ -19,11 +19,6 @@ public class ArrayDataSource implements DataSource {
 	}
 
 	@Override
-	public void setValue(int row, int col, String value) {
-		array[row][col] = value;
-	}
-
-	@Override
 	public int getRowsCount() {
 		return array.length;
 	}

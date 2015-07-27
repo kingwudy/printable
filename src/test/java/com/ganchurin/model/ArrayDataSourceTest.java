@@ -22,14 +22,6 @@ public class ArrayDataSourceTest {
 	}
 
 	@Test
-	public void setValue() {
-		source.setValue(0, 0, "c");
-		assertTrue(source.getValue(0, 0).equals("c"));
-		source.setValue(0, 1, "d");
-		assertTrue(source.getValue(0, 1).equals("d"));
-	}
-
-	@Test
 	public void getRowsCount() {
 		assertTrue(source.getRowsCount() == 1);
 	}
