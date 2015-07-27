@@ -61,11 +61,8 @@ public class SimplePrintFormat implements PrintFormat {
 		for (int row = 0; row < rows; row++) {
 			if (!isDataRow(row)) {
 				for (int j = 0; j < cols; j++) {
-					if (!isDataColumn(j)) {
-						sb.append(getCornerChar());
-					} else {
-						sb.append(getRowChar());
-					}
+					char c = isDataColumn(j) ? getRowChar() : getCornerChar();
+					sb.append(c);
 				}
 				sb.append("\n");
 				continue;
