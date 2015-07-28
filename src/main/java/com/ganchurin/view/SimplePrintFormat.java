@@ -58,26 +58,22 @@ public class SimplePrintFormat implements PrintFormat {
 		int rows = source.getRowsCount();
 		int cols = source.getColumnsCount() * 2 + 1;
 
-		String rowDivider = buildRowDivider(cols);
+		String rowDivider = createRowDivider(cols);
 
 		for (int row = 0; row < rows; row++) {
 			if (sb.length() == 0) {
 				sb.append(rowDivider);
 			}
 			for (int col = 0; col < cols; col++) {
-				if (isDataColumn(col)) {
-					sb.append(source.getValue(row, col / 2));
-				} else {
-					sb.append(getColumnChar());
-				}
+				String v = isDataColumn(col) ? source.getValue(row, col / 2) : "" + getColumnChar();
+				sb.append(v);
 			}
-			sb.append("\n");
-			sb.append(rowDivider);
+			sb.append("\n").append(rowDivider);
 		}
 		return sb.toString();
 	}
 
-	private String buildRowDivider(int cols) {
+	private String createRowDivider(int cols) {
 		StringBuilder sb = new StringBuilder();
 		for (int col = 0; col < cols; col++) {
 			char c = isDataColumn(col) ? getRowChar() : getCornerChar();
@@ -85,10 +81,6 @@ public class SimplePrintFormat implements PrintFormat {
 		}
 		sb.append("\n");
 		return sb.toString();
-	}
-
-	private boolean isDataRow(int row) {
-		return row % 2 == 1;
 	}
 
 	private boolean isDataColumn(int col) {
