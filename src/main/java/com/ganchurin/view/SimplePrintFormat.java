@@ -55,27 +55,35 @@ public class SimplePrintFormat implements PrintFormat {
 	public String format(DataSource source) {
 		StringBuilder sb = new StringBuilder();
 
-		int rows = source.getRowsCount() * 2 + 1;
+		int rows = source.getRowsCount();
 		int cols = source.getColumnsCount() * 2 + 1;
 
+		String rowDivider = buildRowDivider(cols);
+
 		for (int row = 0; row < rows; row++) {
-			if (!isDataRow(row)) {
-				for (int j = 0; j < cols; j++) {
-					char c = isDataColumn(j) ? getRowChar() : getCornerChar();
-					sb.append(c);
-				}
-				sb.append("\n");
-				continue;
+			if (sb.length() == 0) {
+				sb.append(rowDivider);
 			}
 			for (int col = 0; col < cols; col++) {
 				if (isDataColumn(col)) {
-					sb.append(source.getValue(row / 2, col / 2));
+					sb.append(source.getValue(row, col / 2));
 				} else {
 					sb.append(getColumnChar());
 				}
 			}
 			sb.append("\n");
+			sb.append(rowDivider);
 		}
+		return sb.toString();
+	}
+
+	private String buildRowDivider(int cols) {
+		StringBuilder sb = new StringBuilder();
+		for (int col = 0; col < cols; col++) {
+			char c = isDataColumn(col) ? getRowChar() : getCornerChar();
+			sb.append(c);
+		}
+		sb.append("\n");
 		return sb.toString();
 	}
 
