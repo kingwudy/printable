@@ -9,6 +9,10 @@ public class Formatter {
 
 	private final PrintFormat format;
 
+	public Formatter() {
+		this.format = new SimplePrintFormat();
+	}
+
 	public Formatter(PrintFormat format) {
 		this.format = format;
 	}

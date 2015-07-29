@@ -12,8 +12,7 @@ public class FormatterTest {
 	public void testFormat() {
 		String[][] array = new String[][]{{"ab", "c"}, {"d", "ef"}};
 		DataSource src = new ArrayDataSource(array);
-		PrintFormat pf = new SimplePrintFormat();
-		Formatter f = new Formatter(pf);
+		Formatter f = new Formatter();
 		String s = f.format(src);
 		String exp = "" +
 				"+--+--+\n" +
