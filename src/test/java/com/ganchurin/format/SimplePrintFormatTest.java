@@ -1,7 +1,5 @@
 package com.ganchurin.format;
 
-import com.ganchurin.model.ArrayDataSource;
-import com.ganchurin.model.DataSource;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -41,18 +39,4 @@ public class SimplePrintFormatTest {
 		assertTrue(f.getColumnChar() == '*');
 	}
 
-	@Test
-	public void testFormat() {
-		String[][] array = new String[][]{{"ab", "c"}, {"d", "ef"}};
-		DataSource src = new ArrayDataSource(array);
-		PrintFormat pf = new SimplePrintFormat();
-		String s = pf.format(src);
-		String exp = "" +
-				"+--+--+\n" +
-				"|ab|c |\n" +
-				"+--+--+\n" +
-				"|d |ef|\n" +
-				"+--+--+\n";
-		assertTrue(s.equals(exp));
-	}
 }

@@ -1,11 +1,5 @@
 package com.ganchurin.format;
 
-import com.ganchurin.model.Columns;
-import com.ganchurin.model.Columns.Column;
-import com.ganchurin.model.DataSource;
-
-import java.util.List;
-
 public class SimplePrintFormat implements PrintFormat {
 
 	private final static char DefaultCornerChar = '+';
@@ -53,44 +47,5 @@ public class SimplePrintFormat implements PrintFormat {
 	@Override
 	public SimplePrintFormat setColumnChar(char c) {
 		return new SimplePrintFormat(this.cornerChar, this.rowChar, c);
-	}
-
-	@Override
-	public String format(DataSource source) {
-		List<Column> columns = Columns.collectFrom(source);
-
-		StringBuilder sb = new StringBuilder();
-
-		int rows = source.getRowsCount();
-
-		String rowDivider = createRowDivider(columns);
-
-		sb.append(rowDivider);
-		for (int row = 0; row < rows; row++) {
-			for (Column column : columns) {
-				sb.append(getColumnChar());
-				String value = source.getValue(row, column.order);
-				if (value == null) value = "";
-				value = String.format("%1$-" + column.width + "s", value);
-				sb.append(value);
-			}
-			sb.append(getColumnChar()).append("\n");
-			sb.append(rowDivider);
-		}
-		return sb.toString();
-	}
-
-	private String createRowDivider(List<Column> columns) {
-		StringBuilder sb = new StringBuilder();
-
-		for (Column column : columns) {
-			sb.append(getCornerChar());
-			for (int i = 0; i < column.width; i++) {
-				sb.append(getRowChar());
-			}
-		}
-		sb.append(getCornerChar()).append("\n");
-
-		return sb.toString();
 	}
 }

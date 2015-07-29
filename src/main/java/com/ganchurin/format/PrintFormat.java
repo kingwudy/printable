@@ -1,7 +1,5 @@
 package com.ganchurin.format;
 
-import com.ganchurin.model.DataSource;
-
 interface PrintFormat {
 
 	char getCornerChar();
@@ -15,7 +13,5 @@ interface PrintFormat {
 	char getColumnChar();
 
 	PrintFormat setColumnChar(char c);
-
-	String format(DataSource source);
 
 }
