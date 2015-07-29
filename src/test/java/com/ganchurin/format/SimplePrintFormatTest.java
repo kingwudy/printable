@@ -1,4 +1,4 @@
-package com.ganchurin.view;
+package com.ganchurin.format;
 
 import com.ganchurin.model.ArrayDataSource;
 import com.ganchurin.model.DataSource;

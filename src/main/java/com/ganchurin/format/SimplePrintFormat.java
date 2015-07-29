@@ -1,4 +1,4 @@
-package com.ganchurin.view;
+package com.ganchurin.format;
 
 import com.ganchurin.model.Columns;
 import com.ganchurin.model.Columns.Column;
