@@ -1,6 +1,10 @@
 package com.ganchurin.view;
 
+import com.ganchurin.model.Columns;
+import com.ganchurin.model.Columns.Column;
 import com.ganchurin.model.DataSource;
+
+import java.util.List;
 
 public class SimplePrintFormat implements PrintFormat {
 
@@ -53,37 +57,40 @@ public class SimplePrintFormat implements PrintFormat {
 
 	@Override
 	public String format(DataSource source) {
+		List<Column> columns = Columns.collectFrom(source);
+
 		StringBuilder sb = new StringBuilder();
 
 		int rows = source.getRowsCount();
-		int cols = source.getColumnsCount() * 2 + 1;
 
-		String rowDivider = createRowDivider(cols);
+		String rowDivider = createRowDivider(columns);
 
+		sb.append(rowDivider);
 		for (int row = 0; row < rows; row++) {
-			if (sb.length() == 0) {
-				sb.append(rowDivider);
+			for (Column column : columns) {
+				sb.append(getColumnChar());
+				String value = source.getValue(row, column.order);
+				if (value == null) value = "";
+				value = String.format("%1$-" + column.width + "s", value);
+				sb.append(value);
 			}
-			for (int col = 0; col < cols; col++) {
-				String v = isDataColumn(col) ? source.getValue(row, col / 2) : "" + getColumnChar();
-				sb.append(v);
-			}
-			sb.append("\n").append(rowDivider);
+			sb.append(getColumnChar()).append("\n");
+			sb.append(rowDivider);
 		}
 		return sb.toString();
 	}
 
-	private String createRowDivider(int cols) {
+	private String createRowDivider(List<Column> columns) {
 		StringBuilder sb = new StringBuilder();
-		for (int col = 0; col < cols; col++) {
-			char c = isDataColumn(col) ? getRowChar() : getCornerChar();
-			sb.append(c);
-		}
-		sb.append("\n");
-		return sb.toString();
-	}
 
-	private boolean isDataColumn(int col) {
-		return col % 2 == 1;
+		for (Column column : columns) {
+			sb.append(getCornerChar());
+			for (int i = 0; i < column.width; i++) {
+				sb.append(getRowChar());
+			}
+		}
+		sb.append(getCornerChar()).append("\n");
+
+		return sb.toString();
 	}
 }

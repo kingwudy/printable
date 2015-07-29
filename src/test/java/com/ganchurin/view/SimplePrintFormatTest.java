@@ -43,16 +43,16 @@ public class SimplePrintFormatTest {
 
 	@Test
 	public void testFormat() {
-		String[][] array = new String[][]{{"a", "b"}, {"c", "d"}};
+		String[][] array = new String[][]{{"ab", "c"}, {"d", "ef"}};
 		DataSource src = new ArrayDataSource(array);
 		PrintFormat pf = new SimplePrintFormat();
 		String s = pf.format(src);
 		String exp = "" +
-				"+-+-+\n" +
-				"|a|b|\n" +
-				"+-+-+\n" +
-				"|c|d|\n" +
-				"+-+-+\n";
+				"+--+--+\n" +
+				"|ab|c |\n" +
+				"+--+--+\n" +
+				"|d |ef|\n" +
+				"+--+--+\n";
 		assertTrue(s.equals(exp));
 	}
 }
