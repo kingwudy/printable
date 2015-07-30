@@ -1,15 +1,15 @@
 package com.ganchurin.model;
 
-public class ArrayDataSource implements DataSource {
+public class ArraySource implements DataSource {
 
 	private final String[][] array;
 
-	public ArrayDataSource(String[] array) {
+	public ArraySource(String[] array) {
 		this.array = new String[1][];
 		this.array[0] = array;
 	}
 
-	public ArrayDataSource(String[][] array) {
+	public ArraySource(String[][] array) {
 		this.array = array;
 	}
 

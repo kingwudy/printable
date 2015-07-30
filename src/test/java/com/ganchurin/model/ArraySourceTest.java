@@ -5,14 +5,14 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class ArrayDataSourceTest {
+public class ArraySourceTest {
 
-	private ArrayDataSource source;
+	private ArraySource source;
 
 	@Before
 	public void init() {
 		String[] array = new String[]{"a", "b"};
-		source = new ArrayDataSource(array);
+		source = new ArraySource(array);
 	}
 
 	@Test
