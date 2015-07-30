@@ -1,6 +1,6 @@
 package com.ganchurin.format;
 
-interface PrintFormat {
+public interface PrintFormat {
 
 	char getCornerChar();
 
@@ -13,5 +13,9 @@ interface PrintFormat {
 	char getColumnChar();
 
 	PrintFormat setColumnChar(char c);
+
+	Alignment getAlignment();
+
+	PrintFormat setAlignment(Alignment alignment);
 
 }
