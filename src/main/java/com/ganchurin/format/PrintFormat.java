@@ -4,19 +4,19 @@ public abstract class PrintFormat {
 
 	abstract char getCornerChar();
 
-	abstract PrintFormat setCornerChar(char c);
+	abstract void setCornerChar(char c);
 
 	abstract char getRowChar();
 
-	abstract PrintFormat setRowChar(char c);
+	abstract void setRowChar(char c);
 
 	abstract char getColumnChar();
 
-	abstract PrintFormat setColumnChar(char c);
+	abstract void setColumnChar(char c);
 
 	abstract Alignment getAlignment();
 
-	abstract PrintFormat setAlignment(Alignment alignment);
+	abstract void setAlignment(Alignment alignment);
 
 	public static PrintFormat getInstance() {
 		return new SimplePrintFormat();

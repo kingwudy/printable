@@ -12,24 +12,14 @@ public class SimplePrintFormat extends PrintFormat {
 	private char colChar = DefaultColChar;
 	private Alignment alignment = DEFAULT_ALIGNMENT;
 
-	public SimplePrintFormat() {
-	}
-
-	public SimplePrintFormat(char cornerChar, char rowChar, char colChar, Alignment alignment) {
-		this.cornerChar = cornerChar;
-		this.rowChar = rowChar;
-		this.colChar = colChar;
-		this.alignment = alignment;
-	}
-
 	@Override
 	public char getCornerChar() {
 		return cornerChar;
 	}
 
 	@Override
-	public SimplePrintFormat setCornerChar(char c) {
-		return new SimplePrintFormat(c, rowChar, colChar, alignment);
+	public void setCornerChar(char cornerChar) {
+		this.cornerChar = cornerChar;
 	}
 
 	@Override
@@ -38,8 +28,8 @@ public class SimplePrintFormat extends PrintFormat {
 	}
 
 	@Override
-	public SimplePrintFormat setRowChar(char c) {
-		return new SimplePrintFormat(cornerChar, c, colChar, alignment);
+	public void setRowChar(char rowChar) {
+		this.rowChar = rowChar;
 	}
 
 	@Override
@@ -48,8 +38,8 @@ public class SimplePrintFormat extends PrintFormat {
 	}
 
 	@Override
-	public SimplePrintFormat setColumnChar(char c) {
-		return new SimplePrintFormat(cornerChar, rowChar, c, alignment);
+	public void setColumnChar(char colChar) {
+		this.colChar = colChar;
 	}
 
 	@Override
@@ -58,7 +48,7 @@ public class SimplePrintFormat extends PrintFormat {
 	}
 
 	@Override
-	public PrintFormat setAlignment(Alignment alignment) {
-		return new SimplePrintFormat(cornerChar, rowChar, colChar, alignment);
+	public void setAlignment(Alignment alignment) {
+		this.alignment = alignment;
 	}
 }

@@ -19,24 +19,31 @@ public class SimplePrintFormatTest {
 		assertTrue(format.getCornerChar() == '+');
 		assertTrue(format.getRowChar() == '-');
 		assertTrue(format.getColumnChar() == '|');
+		assertTrue(format.getAlignment() == Alignment.Left);
 	}
 
 	@Test
 	public void setCornerChar() {
-		SimplePrintFormat f = format.setCornerChar('*');
-		assertTrue(f.getCornerChar() == '*');
+		format.setCornerChar('*');
+		assertTrue(format.getCornerChar() == '*');
 	}
 
 	@Test
 	public void setRowChar() {
-		SimplePrintFormat f = format.setRowChar('*');
-		assertTrue(f.getRowChar() == '*');
+		format.setRowChar('*');
+		assertTrue(format.getRowChar() == '*');
 	}
 
 	@Test
 	public void setColumnChar() {
-		SimplePrintFormat f = format.setColumnChar('*');
-		assertTrue(f.getColumnChar() == '*');
+		format.setColumnChar('*');
+		assertTrue(format.getColumnChar() == '*');
+	}
+
+	@Test
+	public void setAlignment() {
+		format.setAlignment(Alignment.Right);
+		assertTrue(format.getAlignment() == Alignment.Right);
 	}
 
 }
