@@ -1,6 +1,6 @@
 package com.ganchurin.format;
 
-public class SimplePrintFormat implements PrintFormat {
+public class SimplePrintFormat extends PrintFormat {
 
 	private final static char DefaultCornerChar = '+';
 	private final static char DefaultRowChar = '-';

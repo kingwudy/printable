@@ -1,21 +1,25 @@
 package com.ganchurin.format;
 
-public interface PrintFormat {
+public abstract class PrintFormat {
 
-	char getCornerChar();
+	abstract char getCornerChar();
 
-	PrintFormat setCornerChar(char c);
+	abstract PrintFormat setCornerChar(char c);
 
-	char getRowChar();
+	abstract char getRowChar();
 
-	PrintFormat setRowChar(char c);
+	abstract PrintFormat setRowChar(char c);
 
-	char getColumnChar();
+	abstract char getColumnChar();
 
-	PrintFormat setColumnChar(char c);
+	abstract PrintFormat setColumnChar(char c);
 
-	Alignment getAlignment();
+	abstract Alignment getAlignment();
 
-	PrintFormat setAlignment(Alignment alignment);
+	abstract PrintFormat setAlignment(Alignment alignment);
+
+	public static PrintFormat getInstance() {
+		return new SimplePrintFormat();
+	}
 
 }
