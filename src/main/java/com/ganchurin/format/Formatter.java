@@ -31,9 +31,7 @@ public class Formatter {
 			for (Columns.Column column : columns) {
 				sb.append(format.getColumnChar());
 				String value = source.getValue(row, column.order);
-				if (value == null) value = "";
-				String padChar = format.getAlignment() == Alignment.Left ? "-" : "";
-				value = String.format("%1$" + padChar + column.width + "s", value);
+				value = format.getAlignment().align(value, column.width);
 				sb.append(value);
 			}
 			sb.append(format.getColumnChar()).append("\n");
