@@ -1,5 +1,7 @@
 package com.ganchurin.format;
 
+import com.ganchurin.model.DataSource;
+
 public class SimplePrintFormat extends PrintFormat {
 
 	private final static char DefaultCornerChar = '+';
@@ -50,5 +52,11 @@ public class SimplePrintFormat extends PrintFormat {
 	@Override
 	public void setAlignment(Alignment alignment) {
 		this.alignment = alignment;
+	}
+
+	@Override
+	public String format(DataSource source) {
+		Formatter formatter = new Formatter(this);
+		return formatter.format(source);
 	}
 }

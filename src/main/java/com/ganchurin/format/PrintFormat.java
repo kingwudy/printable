@@ -1,5 +1,7 @@
 package com.ganchurin.format;
 
+import com.ganchurin.model.DataSource;
+
 public abstract class PrintFormat {
 
 	abstract char getCornerChar();
@@ -17,6 +19,8 @@ public abstract class PrintFormat {
 	abstract Alignment getAlignment();
 
 	abstract void setAlignment(Alignment alignment);
+
+	public abstract String format(DataSource source);
 
 	public static PrintFormat getInstance() {
 		return new SimplePrintFormat();
