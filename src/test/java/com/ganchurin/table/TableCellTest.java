@@ -17,7 +17,6 @@ public class TableCellTest {
 
 	private void checkNewCell(String value, int expSize) {
 		TableCell cell = new TableCell(value);
-		assertEquals(cell.getValue(), value);
 		assertEquals(cell.getSize(), expSize);
 	}
 
