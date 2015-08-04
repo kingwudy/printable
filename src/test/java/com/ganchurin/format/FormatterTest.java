@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 public class FormatterTest {
 
 	@Test
-	public void testFormat() {
+	public void format() {
 		String[][] array = new String[][]{{"ab", "c"}, {"d", "ef"}};
 		DataSource src = new ArraySource(array);
 		Formatter f = new Formatter();
