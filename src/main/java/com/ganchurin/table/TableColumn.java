@@ -54,7 +54,6 @@ public class TableColumn implements ValueItem {
 		cells.add(cell);
 	}
 
-	// @todo delete?
 	public List<TableCell> getCells() {
 		return cells;
 	}

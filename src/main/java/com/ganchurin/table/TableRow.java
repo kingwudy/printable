@@ -52,7 +52,6 @@ public class TableRow implements ValueItem {
 		cells.add(cell);
 	}
 
-	// @todo delete?
 	public List<TableCell> getCells() {
 		return cells;
 	}
