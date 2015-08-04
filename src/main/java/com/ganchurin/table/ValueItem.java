@@ -8,10 +8,10 @@ interface ValueItem {
 
 	void setSize(int size);
 
-	void align(Alignment alignment);
-
 	boolean hasBorder(Side side);
 
 	void setBorder(Side side);
+
+	void align(Alignment alignment);
 
 }

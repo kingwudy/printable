@@ -32,10 +32,8 @@ public class TableColumn implements ValueItem {
 	}
 
 	@Override
-	public void align(Alignment alignment) {
-		for (TableCell cell : cells) {
-			cell.align(alignment);
-		}
+	public boolean hasBorder(Side side) {
+		throw new UnsupportedOperationException("Not implemented yet");
 	}
 
 	@Override
@@ -46,8 +44,10 @@ public class TableColumn implements ValueItem {
 	}
 
 	@Override
-	public boolean hasBorder(Side side) {
-		throw new UnsupportedOperationException("Not implemented yet");
+	public void align(Alignment alignment) {
+		for (TableCell cell : cells) {
+			cell.align(alignment);
+		}
 	}
 
 	public void register(TableCell cell) {
