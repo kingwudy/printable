@@ -23,6 +23,19 @@ public class TableCellTest {
 	}
 
 	@Test
+	public void setBorder() {
+		for (Side side : Side.values()) {
+			checkBorder(side);
+		}
+	}
+
+	private void checkBorder(Side side) {
+		TableCell c = new TableCell(null);
+		c.setBorder(side);
+		assertEquals(c.hasBorder(side), true);
+	}
+
+	@Test
 	public void alignCellRight() {
 		alignCell(Right);
 	}
