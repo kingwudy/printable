@@ -23,44 +23,44 @@ public class TableCellTest {
 	}
 
 	@Test
-	public void testCellRightAlign() {
-		testCellAlign(Right);
+	public void alignCellRight() {
+		alignCell(Right);
 	}
 
 	@Test
-	public void testCellLeftAlign() {
-		testCellAlign(Left);
+	public void alignCellLeft() {
+		alignCell(Left);
 	}
 
-	private void testCellAlign(Alignment a) {
-		checkAlign(null, 0, a, "");
-		checkAlign("", 0, a, "");
-		checkAlign("123", 0, a, "123");
-		checkAlign("12345", 0, a, "12345");
-	}
-
-	@Test
-	public void testLongCellLeftAlign() {
-		checkAlign(null, 5, Left, "     ");
-		checkAlign("", 5, Left, "     ");
-		checkAlign("123", 5, Left, "123  ");
-		checkAlign("12345", 5, Left, "12345");
+	private void alignCell(Alignment a) {
+		checkAlignCell(null, 0, a, "");
+		checkAlignCell("", 0, a, "");
+		checkAlignCell("123", 0, a, "123");
+		checkAlignCell("12345", 0, a, "12345");
 	}
 
 	@Test
-	public void testLongCellRightAlign() {
-		checkAlign(null, 5, Right, "     ");
-		checkAlign("", 5, Right, "     ");
-		checkAlign("123", 5, Right, "  123");
-		checkAlign("12345", 5, Right, "12345");
+	public void alignLongCellLeft() {
+		checkAlignCell(null, 5, Left, "     ");
+		checkAlignCell("", 5, Left, "     ");
+		checkAlignCell("123", 5, Left, "123  ");
+		checkAlignCell("12345", 5, Left, "12345");
 	}
 
-	private void checkAlign(String value, int size, Alignment alignment, String exp) {
+	@Test
+	public void alignLongCellRight() {
+		checkAlignCell(null, 5, Right, "     ");
+		checkAlignCell("", 5, Right, "     ");
+		checkAlignCell("123", 5, Right, "  123");
+		checkAlignCell("12345", 5, Right, "12345");
+	}
+
+	private void checkAlignCell(String value, int size, Alignment a, String exp) {
 		TableCell cell = new TableCell(value);
 		if (size > 0) {
 			cell.setSize(size);
 		}
-		cell.align(alignment);
+		cell.align(a);
 		assertEquals(cell.getValue(), exp);
 	}
 }
