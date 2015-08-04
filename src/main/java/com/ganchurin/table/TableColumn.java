@@ -45,6 +45,7 @@ public class TableColumn implements ValueItem {
 
 	@Override
 	public void align(Alignment alignment) {
+		setSize(getSize());
 		for (TableCell cell : cells) {
 			cell.align(alignment);
 		}

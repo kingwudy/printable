@@ -23,8 +23,6 @@ public class Formatter {
 
 	private void setBorders(Table table) {
 		for (TableColumn column : table.getColumns()) {
-			int size = column.getSize();
-			column.setSize(size);
 			column.align(format.getAlignment());
 			if (column.order == 0) {
 				column.setBorder(Side.LEFT);
