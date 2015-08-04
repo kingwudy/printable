@@ -33,7 +33,25 @@ public class TableColumn implements ValueItem {
 
 	@Override
 	public boolean hasBorder(Side side) {
-		throw new UnsupportedOperationException("Not implemented yet");
+		if (cells.size() == 0) {
+			return false;
+		}
+		switch (side) {
+			case UP:
+				return cells.get(0).hasBorder(side);
+			case BOTTOM:
+				return cells.get(cells.size() - 1).hasBorder(side);
+			case LEFT:
+			case RIGHT:
+				for (TableCell cell : cells) {
+					if (!cell.hasBorder(side)) {
+						return false;
+					}
+				}
+				return true;
+			default:
+				throw new IllegalArgumentException("Unknown side '" + side + "'");
+		}
 	}
 
 	@Override
