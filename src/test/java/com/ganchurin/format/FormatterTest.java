@@ -14,7 +14,6 @@ public class FormatterTest {
 		DataSource src = new ArraySource(array);
 		Formatter f = new Formatter();
 		String s = f.format(src);
-		System.out.println(s);
 		String exp = "" +
 				"+--+--+\n" +
 				"|ab|c |\n" +
