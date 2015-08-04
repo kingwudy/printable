@@ -1,10 +1,8 @@
 package com.ganchurin.table;
 
-import com.ganchurin.format.Alignment;
+import com.ganchurin.format.Align;
 import org.junit.Test;
 
-import static com.ganchurin.format.Alignment.Left;
-import static com.ganchurin.format.Alignment.Right;
 import static org.junit.Assert.assertEquals;
 
 public class TableCellTest {
@@ -13,6 +11,7 @@ public class TableCellTest {
 	public void newCell() {
 		checkNewCell(null, 0);
 		checkNewCell("", 0);
+		checkNewCell(" ", 1);
 		checkNewCell("123", 3);
 	}
 
@@ -37,15 +36,15 @@ public class TableCellTest {
 
 	@Test
 	public void alignCellRight() {
-		alignCell(Right);
+		alignCell(Align.Right);
 	}
 
 	@Test
 	public void alignCellLeft() {
-		alignCell(Left);
+		alignCell(Align.Left);
 	}
 
-	private void alignCell(Alignment a) {
+	private void alignCell(Align a) {
 		checkAlignCell(null, 0, a, "");
 		checkAlignCell("", 0, a, "");
 		checkAlignCell("123", 0, a, "123");
@@ -54,21 +53,21 @@ public class TableCellTest {
 
 	@Test
 	public void alignLongCellLeft() {
-		checkAlignCell(null, 5, Left, "     ");
-		checkAlignCell("", 5, Left, "     ");
-		checkAlignCell("123", 5, Left, "123  ");
-		checkAlignCell("12345", 5, Left, "12345");
+		checkAlignCell(null, 5, Align.Left, "     ");
+		checkAlignCell("", 5, Align.Left, "     ");
+		checkAlignCell("123", 5, Align.Left, "123  ");
+		checkAlignCell("12345", 5, Align.Left, "12345");
 	}
 
 	@Test
 	public void alignLongCellRight() {
-		checkAlignCell(null, 5, Right, "     ");
-		checkAlignCell("", 5, Right, "     ");
-		checkAlignCell("123", 5, Right, "  123");
-		checkAlignCell("12345", 5, Right, "12345");
+		checkAlignCell(null, 5, Align.Right, "     ");
+		checkAlignCell("", 5, Align.Right, "     ");
+		checkAlignCell("123", 5, Align.Right, "  123");
+		checkAlignCell("12345", 5, Align.Right, "12345");
 	}
 
-	private void checkAlignCell(String value, int size, Alignment a, String exp) {
+	private void checkAlignCell(String value, int size, Align a, String exp) {
 		TableCell cell = new TableCell(value);
 		if (size > 0) {
 			cell.setSize(size);

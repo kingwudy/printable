@@ -16,9 +16,9 @@ public abstract class PrintFormat {
 
 	abstract void setColumnChar(char c);
 
-	abstract Alignment getAlignment();
+	abstract Align getAlign();
 
-	abstract void setAlignment(Alignment alignment);
+	abstract void setAlign(Align align);
 
 	public abstract String format(DataSource source);
 

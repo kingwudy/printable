@@ -7,12 +7,12 @@ public class SimplePrintFormat extends PrintFormat {
 	private final static char DefaultCornerChar = '+';
 	private final static char DefaultRowChar = '-';
 	private final static char DefaultColChar = '|';
-	private final static Alignment DEFAULT_ALIGNMENT = Alignment.Left;
+	private final static Align DefaultAlign = Align.Left;
 
 	private char cornerChar = DefaultCornerChar;
 	private char rowChar = DefaultRowChar;
 	private char colChar = DefaultColChar;
-	private Alignment alignment = DEFAULT_ALIGNMENT;
+	private Align align = DefaultAlign;
 
 	@Override
 	public char getCornerChar() {
@@ -45,13 +45,13 @@ public class SimplePrintFormat extends PrintFormat {
 	}
 
 	@Override
-	public Alignment getAlignment() {
-		return alignment;
+	public Align getAlign() {
+		return align;
 	}
 
 	@Override
-	public void setAlignment(Alignment alignment) {
-		this.alignment = alignment;
+	public void setAlign(Align align) {
+		this.align = align;
 	}
 
 	@Override

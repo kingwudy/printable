@@ -19,7 +19,7 @@ public class SimplePrintFormatTest {
 		assertTrue(format.getCornerChar() == '+');
 		assertTrue(format.getRowChar() == '-');
 		assertTrue(format.getColumnChar() == '|');
-		assertTrue(format.getAlignment() == Alignment.Left);
+		assertTrue(format.getAlign() == Align.Left);
 	}
 
 	@Test
@@ -42,8 +42,8 @@ public class SimplePrintFormatTest {
 
 	@Test
 	public void setAlignment() {
-		format.setAlignment(Alignment.Right);
-		assertTrue(format.getAlignment() == Alignment.Right);
+		format.setAlign(Align.Right);
+		assertTrue(format.getAlign() == Align.Right);
 	}
 
 }

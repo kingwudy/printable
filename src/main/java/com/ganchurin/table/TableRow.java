@@ -1,6 +1,6 @@
 package com.ganchurin.table;
 
-import com.ganchurin.format.Alignment;
+import com.ganchurin.format.Align;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,9 +42,9 @@ public class TableRow implements ValueItem {
 	}
 
 	@Override
-	public void align(Alignment alignment) {
+	public void align(Align align) {
 		for (TableCell cell : cells) {
-			cell.align(alignment);
+			cell.align(align);
 		}
 	}
 

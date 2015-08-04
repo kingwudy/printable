@@ -1,6 +1,6 @@
 package com.ganchurin.table;
 
-import com.ganchurin.format.Alignment;
+import com.ganchurin.format.Align;
 
 import java.util.EnumMap;
 
@@ -44,9 +44,9 @@ public class TableCell implements ValueItem {
 	}
 
 	@Override
-	public void align(Alignment alignment) {
+	public void align(Align align) {
 		if (size != 0) {
-			value = String.format("%1$" + alignment.padSymbol + size + "s", trimToEmpty(value));
+			value = String.format("%1$" + align.padSymbol + size + "s", trimToEmpty(value));
 		} else {
 			value = "";
 		}

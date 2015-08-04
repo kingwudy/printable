@@ -1,6 +1,6 @@
 package com.ganchurin.table;
 
-import com.ganchurin.format.Alignment;
+import com.ganchurin.format.Align;
 
 interface ValueItem {
 
@@ -12,6 +12,6 @@ interface ValueItem {
 
 	void setBorder(Side side);
 
-	void align(Alignment alignment);
+	void align(Align align);
 
 }
