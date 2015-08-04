@@ -10,6 +10,19 @@ import static org.junit.Assert.assertEquals;
 public class TableCellTest {
 
 	@Test
+	public void newCell() {
+		checkNewCell(null, 0);
+		checkNewCell("", 0);
+		checkNewCell("123", 3);
+	}
+
+	private void checkNewCell(String value, int expSize) {
+		TableCell cell = new TableCell(value);
+		assertEquals(cell.getValue(), value);
+		assertEquals(cell.getSize(), expSize);
+	}
+
+	@Test
 	public void testCellRightAlign() {
 		testCellAlign(Right);
 	}
