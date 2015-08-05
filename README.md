@@ -9,3 +9,5 @@ News
 ----
 
 Project is under construction!
+
+Expected release date: 23 Aug 2015.
