@@ -5,6 +5,8 @@ A Java library to build string tables.
 
 [![Build Status](https://travis-ci.org/ganchurin/constable.svg?branch=master)](https://travis-ci.org/ganchurin/constable)
 
+![](https://reposs.herokuapp.com/?path=ganchurin/constable)
+
 News
 ----
 
