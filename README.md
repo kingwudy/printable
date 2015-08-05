@@ -9,5 +9,11 @@ News
 ----
 
 Project is under construction!
+Expected release date: 30 Aug 2015.
 
-Expected release date: 23 Aug 2015.
+Actual tasks
+--------------------
+
+1. Test coverage
+2. Documentation
+3. Deploy to mvncentral
