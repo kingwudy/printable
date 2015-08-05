@@ -1,5 +1,5 @@
-# Constable
-=====================
+Constable
+=========
 
 A Java library to build string tables.
 
