@@ -7,11 +7,13 @@ public class SimplePrintFormat extends PrintFormat {
 	private final static char DefaultCornerChar = '+';
 	private final static char DefaultRowChar = '-';
 	private final static char DefaultColChar = '|';
+
 	private final static Align DefaultAlign = Align.Left;
 
 	private char cornerChar = DefaultCornerChar;
 	private char rowChar = DefaultRowChar;
 	private char colChar = DefaultColChar;
+
 	private Align align = DefaultAlign;
 
 	@Override
