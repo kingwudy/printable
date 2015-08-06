@@ -22,12 +22,7 @@ public class PeriodicTable {
 
 		DataSource source = new ArraySource(array);
 
-		SimplePrintFormat spf = new SimplePrintFormat();
-		spf.setCornerChar(' ');
-		spf.setColumnChar(' ');
-		spf.setRowChar(' ');
-
-		String result = spf.format(source);
+		String result = PrintFormat.getInstance().format(source);
 
 		System.out.println(result);
 	}
