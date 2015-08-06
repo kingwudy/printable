@@ -20,6 +20,10 @@ public class StringUtils {
 					return s + spaces(offset);
 				case RIGHT:
 					return spaces(offset) + s;
+				case CENTER:
+					int left = offset / 2 + offset % 2;
+					int right = offset - left;
+					return spaces(left) + s + spaces(right);
 				default:
 					throw new IllegalArgumentException("Unknown align: " + align);
 			}

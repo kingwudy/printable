@@ -43,6 +43,11 @@ public class TableCellTest {
 		checkAlignCell("123", 5, Align.RIGHT, "  123");
 	}
 
+	@Test
+	public void alignCellCenter() {
+		checkAlignCell("123", 5, Align.CENTER, " 123 ");
+	}
+
 	private void checkAlignCell(String value, int size, Align a, String exp) {
 		TableCell cell = new TableCell(value);
 		if (size > 0) {
