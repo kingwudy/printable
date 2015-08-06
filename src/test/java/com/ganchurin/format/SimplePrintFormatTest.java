@@ -16,6 +16,11 @@ public class SimplePrintFormatTest {
 
 	@Test
 	public void newSimplePrintFormat() {
+		newSimplePrintFormat(format);
+		newSimplePrintFormat(PrintFormat.getInstance());
+	}
+
+	private void newSimplePrintFormat(PrintFormat format) {
 		assertTrue(format.getCornerChar() == '+');
 		assertTrue(format.getRowChar() == '-');
 		assertTrue(format.getColumnChar() == '|');
