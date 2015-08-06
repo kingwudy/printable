@@ -50,7 +50,7 @@ public class TableColumn implements ValueItem {
 				}
 				return true;
 			default:
-				throw new IllegalArgumentException("Unknown side '" + side + "'");
+				throw new IllegalArgumentException("Unknown side: " + side);
 		}
 	}
 
