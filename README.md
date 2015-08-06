@@ -13,10 +13,10 @@ News
 Project is under construction!
 Expected release date: 30 Aug 2015.
 
-Example (periodic table)
-------------------------
+Example
+-------
 
-This is how two-dimensional array looks after being processed by Constable.
+This is how periodic table (two-dimensional array) looks after being processed by Constable.
 
     +-+--+--+--+--+--+--+--+--+--+--+--+--+
     |/|1 |2 |3 |4 |5 |6 |7 |8 |9 |10|11|12|
