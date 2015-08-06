@@ -20,6 +20,10 @@ public abstract class PrintFormat {
 
 	abstract void setAlign(Align align);
 
+	abstract int getColumnSize();
+
+	abstract void setColumnSize(int size);
+
 	public abstract String format(DataSource source);
 
 	public static PrintFormat getInstance() {
