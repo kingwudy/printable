@@ -14,8 +14,8 @@ Project is under construction.
 
 Expected release date: 30 Aug 2015.
 
-Demo
-----
+Demo (periodic table)
+---------------------
 
 This is how two-dimensional array (periodic table) may look after being processed by Constable.
 
