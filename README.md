@@ -10,7 +10,7 @@ A Java library to build string tables.
 News
 ----
 
-Project is under construction.
+Project is not released yet.
 
 Expected release date: 30 Aug 2015.
 
