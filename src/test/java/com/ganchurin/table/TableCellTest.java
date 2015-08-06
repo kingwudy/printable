@@ -34,36 +34,13 @@ public class TableCellTest {
 	}
 
 	@Test
-	public void alignCellRight() {
-		alignCell(Align.Right);
-	}
-
-	@Test
 	public void alignCellLeft() {
-		alignCell(Align.Left);
-	}
-
-	private void alignCell(Align a) {
-		checkAlignCell(null, 0, a, "");
-		checkAlignCell("", 0, a, "");
-		checkAlignCell("123", 0, a, "123");
-		checkAlignCell("12345", 0, a, "12345");
-	}
-
-	@Test
-	public void alignLongCellLeft() {
-		checkAlignCell(null, 5, Align.Left, "     ");
-		checkAlignCell("", 5, Align.Left, "     ");
 		checkAlignCell("123", 5, Align.Left, "123  ");
-		checkAlignCell("12345", 5, Align.Left, "12345");
 	}
 
 	@Test
-	public void alignLongCellRight() {
-		checkAlignCell(null, 5, Align.Right, "     ");
-		checkAlignCell("", 5, Align.Right, "     ");
+	public void alignCellRight() {
 		checkAlignCell("123", 5, Align.Right, "  123");
-		checkAlignCell("12345", 5, Align.Right, "12345");
 	}
 
 	private void checkAlignCell(String value, int size, Align a, String exp) {
