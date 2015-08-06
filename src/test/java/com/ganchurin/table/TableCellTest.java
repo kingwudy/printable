@@ -50,9 +50,7 @@ public class TableCellTest {
 
 	private void checkAlignCell(String value, int size, Align a, String exp) {
 		TableCell cell = new TableCell(value);
-		if (size > 0) {
-			cell.setSize(size);
-		}
+		cell.setSize(size);
 		cell.align(a);
 		assertEquals(cell.getValue(), exp);
 	}
