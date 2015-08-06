@@ -16,9 +16,9 @@ public class StringUtils {
 			return s.substring(0, length + offset);
 		} else {
 			switch (align) {
-				case Left:
+				case LEFT:
 					return s + spaces(offset);
-				case Right:
+				case RIGHT:
 					return spaces(offset) + s;
 				default:
 					throw new IllegalArgumentException("Unknown align: " + align);

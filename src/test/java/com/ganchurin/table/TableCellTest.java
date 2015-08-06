@@ -35,12 +35,12 @@ public class TableCellTest {
 
 	@Test
 	public void alignCellLeft() {
-		checkAlignCell("123", 5, Align.Left, "123  ");
+		checkAlignCell("123", 5, Align.LEFT, "123  ");
 	}
 
 	@Test
 	public void alignCellRight() {
-		checkAlignCell("123", 5, Align.Right, "  123");
+		checkAlignCell("123", 5, Align.RIGHT, "  123");
 	}
 
 	private void checkAlignCell(String value, int size, Align a, String exp) {

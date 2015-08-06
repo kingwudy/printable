@@ -8,7 +8,7 @@ public class SimplePrintFormat extends PrintFormat {
 	private final static char DefaultRowChar = '-';
 	private final static char DefaultColChar = '|';
 
-	private final static Align DefaultAlign = Align.Left;
+	private final static Align DefaultAlign = Align.LEFT;
 
 	private final static int DefaultSize = 0;
 
