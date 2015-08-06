@@ -61,12 +61,12 @@ public class SimplePrintFormat extends PrintFormat {
 	}
 
 	@Override
-	int getColumnSize() {
+	public int getColumnSize() {
 		return columnSize;
 	}
 
 	@Override
-	void setColumnSize(int size) {
+	public void setColumnSize(int size) {
 		columnSize = size;
 	}
 
