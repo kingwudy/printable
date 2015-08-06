@@ -2,7 +2,8 @@ language: java
 
 jdk: oraclejdk8
 
-before_install:
-  pip install codecov
+install:
+  - pip install codecov
+
 after_success:
-  codecov
+  - codecov
