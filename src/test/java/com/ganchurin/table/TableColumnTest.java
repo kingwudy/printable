@@ -14,10 +14,24 @@ public class TableColumnTest {
 	@Before
 	public void init() {
 		column = new TableColumn(0);
-		c1 = new TableCell("c1");
-		c2 = new TableCell("c2");
+		c1 = new TableCell("first");
+		c2 = new TableCell("second");
 		column.register(c1);
 		column.register(c2);
+	}
+
+	@Test
+	public void getSize() {
+		assertEquals(column.getSize(), 6);
+	}
+
+	@Test
+	public void setSize() {
+		assertEquals(c1.getSize(), 5);
+		assertEquals(c2.getSize(), 6);
+		column.setSize(10);
+		assertEquals(c1.getSize(), 10);
+		assertEquals(c2.getSize(), 10);
 	}
 
 	@Test
