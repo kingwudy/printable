@@ -6,38 +6,29 @@ import org.junit.Test;
 import static com.ganchurin.table.Side.*;
 import static org.junit.Assert.assertEquals;
 
-public class TableColumnTest {
+public class TableRowTest {
 
-	TableColumn column;
+	TableRow row;
 	TableCell c1, c2;
 
 	@Before
 	public void init() {
-		column = new TableColumn(0);
+		row = new TableRow(0);
 		c1 = new TableCell("first");
 		c2 = new TableCell("second");
-		column.register(c1);
-		column.register(c2);
+		row.register(c1);
+		row.register(c2);
 	}
 
 	@Test
 	public void getSize() {
-		assertEquals(column.getSize(), 6);
-	}
-
-	@Test
-	public void setSize() {
-		assertEquals(c1.getSize(), 5);
-		assertEquals(c2.getSize(), 6);
-		column.setSize(10);
-		assertEquals(c1.getSize(), 10);
-		assertEquals(c2.getSize(), 10);
+		assertEquals(row.getSize(), 11);
 	}
 
 	@Test
 	public void setBorder() {
 		for (Side side : Side.values()) {
-			column.setBorder(side);
+			row.setBorder(side);
 			assertEquals(c1.hasBorder(side), true);
 			assertEquals(c2.hasBorder(side), true);
 		}
@@ -46,41 +37,41 @@ public class TableColumnTest {
 	@Test
 	public void hasNoBorder() {
 		for (Side side : Side.values()) {
-			assertEquals(column.hasBorder(side), false);
+			assertEquals(row.hasBorder(side), false);
 		}
 	}
 
 	@Test
 	public void emptyColumnHasNoBorders() {
-		TableColumn column = new TableColumn(0);
+		TableRow row = new TableRow(0);
 		for (Side side : Side.values()) {
-			assertEquals(column.hasBorder(side), false);
+			assertEquals(row.hasBorder(side), false);
 		}
 	}
 
 	@Test
 	public void hasLeftBorder() {
 		c1.setBorder(LEFT);
-		c2.setBorder(LEFT);
-		assertEquals(column.hasBorder(LEFT), true);
+		assertEquals(row.hasBorder(LEFT), true);
 	}
 
 	@Test
 	public void hasRightBorder() {
-		c1.setBorder(RIGHT);
 		c2.setBorder(RIGHT);
-		assertEquals(column.hasBorder(RIGHT), true);
+		assertEquals(row.hasBorder(RIGHT), true);
 	}
 
 	@Test
 	public void hasUpBorder() {
 		c1.setBorder(UP);
-		assertEquals(column.hasBorder(UP), true);
+		c2.setBorder(UP);
+		assertEquals(row.hasBorder(UP), true);
 	}
 
 	@Test
 	public void hasBottomBorder() {
+		c1.setBorder(BOTTOM);
 		c2.setBorder(BOTTOM);
-		assertEquals(column.hasBorder(BOTTOM), true);
+		assertEquals(row.hasBorder(BOTTOM), true);
 	}
 }
