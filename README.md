@@ -10,7 +10,7 @@ A Java library to build string tables.
 News
 ----
 
-Project is not released yet.
+01 Sep 2015 - version 0.1-alpha released!
 
 Demo (periodic table)
 ---------------------
