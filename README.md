@@ -36,3 +36,12 @@ This is how two-dimensional array (periodic table) may look like after being pro
     +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
     |8  |Uue|Ubn|***|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
     +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+
+Code:
+```java
+String[][] array = new String[][]{...};
+
+DataSource source = new ArraySource(array);
+
+String result = PrintFormat.getInstance().format(source);
+```
