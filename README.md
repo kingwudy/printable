@@ -43,5 +43,5 @@ String[][] array = new String[][]{...};
 
 DataSource source = new ArraySource(array);
 
-String result = PrintFormat.getInstance().format(source);
+String result = PrintFormatFactory.createFormat().format(source);
 ```

@@ -1,7 +1,6 @@
 package com.ganchurin;
 
-import com.ganchurin.format.PrintFormat;
-import com.ganchurin.format.SimplePrintFormat;
+import com.ganchurin.format.PrintFormatFactory;
 import com.ganchurin.model.ArraySource;
 import com.ganchurin.model.DataSource;
 
@@ -22,7 +21,7 @@ public class PeriodicTable {
 
 		DataSource source = new ArraySource(array);
 
-		String result = PrintFormat.getInstance().format(source);
+		String result = PrintFormatFactory.createFormat().format(source);
 
 		System.out.println(result);
 	}

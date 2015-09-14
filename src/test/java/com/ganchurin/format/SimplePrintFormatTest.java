@@ -17,7 +17,7 @@ public class SimplePrintFormatTest {
 	@Test
 	public void newSimplePrintFormat() {
 		newSimplePrintFormat(format);
-		newSimplePrintFormat(PrintFormat.getInstance());
+		newSimplePrintFormat(PrintFormatFactory.createFormat());
 	}
 
 	private void newSimplePrintFormat(PrintFormat format) {

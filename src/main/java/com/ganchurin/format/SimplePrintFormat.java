@@ -2,7 +2,7 @@ package com.ganchurin.format;
 
 import com.ganchurin.model.DataSource;
 
-public class SimplePrintFormat extends PrintFormat {
+public class SimplePrintFormat implements PrintFormat {
 
 	private final static char DefaultCornerChar = '+';
 	private final static char DefaultRowChar = '-';
