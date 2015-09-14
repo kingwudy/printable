@@ -5,7 +5,7 @@ import com.ganchurin.format.Align;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TableColumn implements ValueItem {
+public class TableColumn implements TableItem {
 
 	public final int order;
 

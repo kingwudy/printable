@@ -5,7 +5,7 @@ import com.ganchurin.util.StringUtils;
 
 import java.util.EnumMap;
 
-public class TableCell implements ValueItem {
+public class TableCell implements TableItem {
 
 	private String value;
 

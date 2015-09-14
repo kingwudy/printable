@@ -2,7 +2,7 @@ package com.ganchurin.table;
 
 import com.ganchurin.format.Align;
 
-interface ValueItem {
+interface TableItem {
 
 	int getSize();
 
