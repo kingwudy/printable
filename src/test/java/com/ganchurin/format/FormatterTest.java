@@ -8,6 +8,8 @@ import static org.junit.Assert.assertTrue;
 
 public class FormatterTest {
 
+	private static final String LineSeparator = System.lineSeparator();
+
 	@Test
 	public void format() {
 		String[][] array = new String[][]{{"ab", "c"}, {"d", "ef"}};
@@ -15,11 +17,11 @@ public class FormatterTest {
 		Formatter f = new Formatter();
 		String s = f.format(src);
 		String exp = "" +
-				"+--+--+\n" +
-				"|ab|c |\n" +
-				"+--+--+\n" +
-				"|d |ef|\n" +
-				"+--+--+\n";
+				"+--+--+" + LineSeparator +
+				"|ab|c |" + LineSeparator +
+				"+--+--+" + LineSeparator +
+				"|d |ef|" + LineSeparator +
+				"+--+--+" + LineSeparator;
 		assertTrue(s.equals(exp));
 	}
 }

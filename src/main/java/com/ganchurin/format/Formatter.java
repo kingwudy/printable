@@ -5,6 +5,8 @@ import com.ganchurin.table.*;
 
 public class Formatter {
 
+	private static final String LineSeparator = System.lineSeparator();
+
 	private final PrintFormat format;
 
 	public Formatter() {
@@ -73,9 +75,9 @@ public class Formatter {
 					bmBuilder.append(format.getCornerChar());
 				}
 			}
-			if (upBuilder.length() != 0) sb.append(upBuilder).append("\n");
-			sb.append(vlBuilder).append("\n");
-			if (bmBuilder.length() != 0) sb.append(bmBuilder).append("\n");
+			if (upBuilder.length() != 0) sb.append(upBuilder).append(LineSeparator);
+			sb.append(vlBuilder).append(LineSeparator);
+			if (bmBuilder.length() != 0) sb.append(bmBuilder).append(LineSeparator);
 		}
 		return sb.toString();
 	}
