@@ -1,7 +1,7 @@
-Constable
+Printable
 =========
 
-A Java library to build string tables.
+A Java library to print string tables.
 
 [![Build Status](https://travis-ci.org/ganchurin/printable.svg?branch=master)](https://travis-ci.org/ganchurin/printable) [![MIT License](http://img.shields.io/badge/license-MIT-green.svg)](https://github.com/ganchurin/constable/blob/master/LICENSE)
 
