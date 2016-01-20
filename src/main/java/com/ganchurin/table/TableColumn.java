@@ -1,6 +1,6 @@
 package com.ganchurin.table;
 
-import com.ganchurin.format.Align;
+import com.ganchurin.format.align.Align;
 
 import java.util.ArrayList;
 import java.util.List;

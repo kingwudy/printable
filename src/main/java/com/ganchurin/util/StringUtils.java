@@ -1,6 +1,6 @@
 package com.ganchurin.util;
 
-import com.ganchurin.format.Align;
+import com.ganchurin.format.align.Align;
 
 public class StringUtils {
 

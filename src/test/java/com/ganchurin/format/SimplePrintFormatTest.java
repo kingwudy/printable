@@ -1,5 +1,6 @@
 package com.ganchurin.format;
 
+import com.ganchurin.format.align.Align;
 import org.junit.Before;
 import org.junit.Test;
 

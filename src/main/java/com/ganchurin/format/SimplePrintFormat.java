@@ -1,5 +1,6 @@
 package com.ganchurin.format;
 
+import com.ganchurin.format.align.Align;
 import com.ganchurin.model.DataSource;
 
 public class SimplePrintFormat implements PrintFormat {
